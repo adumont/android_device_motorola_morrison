@@ -41,7 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
         ro.config.vc_call_vol_steps=7 \
         ro.telephony.call_ring.multiple=false \
-        ro.telephony.call_ring.delay=4000 \
+        ro.telephony.call_ring.delay=1000 \
         ro.url.safetylegal=http://www.motorola.com/staticfiles/Support/legal/?model=MB200 \
         ro.setupwizard.enable_bypass=1 \
         dalvik.vm.lockprof.threshold=500 \
@@ -82,7 +82,8 @@ PRODUCT_PACKAGES += \
     libcamera \
     libaudio \
     rzscontrol \
-    dexpreopt
+    dexpreopt \
+    setrecovery
 
 DISABLE_DEXPREOPT := false
 
@@ -108,6 +109,9 @@ LOCAL_KERNEL := device/motorola/morrison/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
+
+PRODUCT_COPY_FILES += \
+    device/motorola/morrison/setrecovery/prebuilt:recovery/root/sbin/setrecovery
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \

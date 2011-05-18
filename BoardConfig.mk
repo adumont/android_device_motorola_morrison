@@ -80,6 +80,9 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 #BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0bf00000
 #BOARD_FLASH_BLOCK_SIZE := 131072
 
+# System
+WITH_DEXPREOPT := true
+
 # Graphics
 # Use RGB565 surfaces until userspace drivers are upgraded
 BOARD_NO_RGBX_8888 := true
@@ -102,7 +105,7 @@ TARGET_PROVIDES_LIBAUDIO := true
 BOARD_HAS_VIBRATOR_IMPLEMENTATION := ../../device/motorola/morrison/vibrator.c
 
 # Recovery
-TARGET_RECOVERY_WRITE_MISC_PART := 3
+TARGET_RECOVERY_PRE_COMMAND := "setrecovery recovery"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/motorola/morrison/recovery/recovery_ui.c
 
 TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/morrison/recovery_kernel
