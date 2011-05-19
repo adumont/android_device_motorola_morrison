@@ -77,13 +77,13 @@ adb pull /system/etc/akm/akmd_set.cfg ../../../vendor/motorola/$DEVICE/proprieta
 #adb pull /system/lib/libOMX.TI.MP3.decode.so ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/lib/libOMX.TI.WBAMR.decode.so ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/lib/libOMX.TI.WMA.decode.so ../../../vendor/motorola/$DEVICE/proprietary
-#adb pull /system/lib/libomx_aacdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
-#adb pull /system/lib/libomx_amrdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
-#adb pull /system/lib/libomx_amrenc_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
-#adb pull /system/lib/libomx_arcomxcore_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
-#adb pull /system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
-#adb pull /system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
-#adb pull /system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libomx_aacdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libomx_amrdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libomx_amrenc_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libomx_arcomxcore_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libomx_sharedlibrary_qc.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libomx_wmadec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/lib/libOmxCore.so ../../../vendor/motorola/$DEVICE/proprietary
@@ -167,11 +167,22 @@ adb pull /system/etc/pvplayer_mot.cfg ../../../vendor/motorola/$DEVICE/proprieta
 #adb pull /system/tts/lang_pico/fr-FR_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/tts/lang_pico/it-IT_cm0_sg.bin ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/tts/lang_pico/it-IT_ta.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/usr/keychars/adp5588_morrison.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/usr/keychars/headset.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/usr/keylayout/adp5588_morrison.kl ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/usr/keylayout/headset.kl ../../../vendor/motorola/$DEVICE/proprietary
-
+adb pull /system/usr/keychars/adp5588_morrison.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keychars/adp5588_morrison_P2.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keychars/headset.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keychars/morrison-kpd.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keychars/adp5588_keypad.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keychars/adp5588_morrison_azerty.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keychars/qwerty.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keychars/qwerty2.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keylayout/adp5588_keypad.kl ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keylayout/adp5588_morrison.kl ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keylayout/adp5588_morrison_P2.kl ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keylayout/headset.kl ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keylayout/morrison-kpd.kl ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keylayout/adp5588_morrison_azerty.kl ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keylayout/AVRCP.kl ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/usr/keylayout/qwerty.kl ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/bin/touchpad ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/bin/fmradio ../../../vendor/motorola/$DEVICE/proprietary
 #adb pull /system/bin/fmradioserver ../../../vendor/motorola/$DEVICE/proprietary
@@ -267,9 +278,22 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/nvram.txt:/system/etc/wifi/nvram.txt \\
     vendor/motorola/__DEVICE__/proprietary/sdio-g-cdc-reclaim-wme.bin:/system/etc/wifi/sdio-g-cdc-reclaim-wme.bin \\
     vendor/motorola/__DEVICE__/proprietary/pvplayer_mot.cfg:/system/etc/pvplayer_mot.cfg \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison.kcm.bin:/system/usr/keychars/adp5588_morrison.kcm.bin \\
+   vendor/motorola/__DEVICE__/proprietary/adp5588_morrison.kcm.bin:/system/usr/keychars/adp5588_morrison.kcm.bin \\
     vendor/motorola/__DEVICE__/proprietary/headset.kcm.bin:/system/usr/keychars/headset.kcm.bin \\
+    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_P2.kcm.bin:/system/usr/keychars/adp5588_morrison_P2.kcm.bin \\
+    vendor/motorola/__DEVICE__/proprietary/morrison-kpd.kcm.bin:/system/usr/keychars/morrison-kpd.kcm.bin \\
+    vendor/motorola/__DEVICE__/proprietary/adp5588_keypad.kcm.bin:/system/usr/keychars/adp5588_keypad.kcm.bin \\
+    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_azerty.kcm.bin:/system/usr/keychars/adp5588_morrison_azerty.kcm.bin \\
+    vendor/motorola/__DEVICE__/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \\
+    vendor/motorola/__DEVICE__/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \\
+    vendor/motorola/__DEVICE__/proprietary/adp5588_keypad.kl:/system/usr/keylayout/adp5588_keypad.kl \\
     vendor/motorola/__DEVICE__/proprietary/adp5588_morrison.kl:/system/usr/keylayout/adp5588_morrison.kl \\
+    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_P2.kl:/system/usr/keylayout/adp5588_morrison_P2.kl \\
+    vendor/motorola/__DEVICE__/proprietary/headset.kl:/system/usr/keylayout/headset.kl \\
+    vendor/motorola/__DEVICE__/proprietary/morrison-kpd.kl:/system/usr/keylayout/morrison-kpd.kl \\
+    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_azerty.kl:/system/usr/keylayout/adp5588_morrison_azerty.kl \\
+    vendor/motorola/__DEVICE__/proprietary/AVRCP.kl:/system/usr/keylayout/AVRCP.kl \\
+    vendor/motorola/__DEVICE__/proprietary/qwerty.kl:/system/usr/keylayout/qwerty.kl \\
     vendor/motorola/__DEVICE__/proprietary/touchpad:/system/bin/touchpad \\
     vendor/motorola/__DEVICE__/proprietary/tcmd_engine:/system/bin/tcmd_engine \\
     vendor/motorola/__DEVICE__/proprietary/fuel_gauge:/system/bin/fuel_gauge \\
@@ -284,14 +308,14 @@ PRODUCT_COPY_FILES += \\
 #    vendor/motorola/__DEVICE__/proprietary/lights.msm7k.so:/system/lib/hw/lights.msm7k.so
 #    vendor/motorola/__DEVICE__/proprietary/FMRadio.apk:/system/app/FMRadio.apk
 #    vendor/motorola/__DEVICE__/proprietary/libOmxCore.so:/system/lib/libOmxCore.so \\
-#    vendor/motorola/__DEVICE__/proprietary/libOmxMp3Dec.so:/system/lib/libOmxMp3Dec.so \\
-#    vendor/motorola/__DEVICE__/proprietary/libomx_aacdec_sharedlibrary.so:/system/lib/libomx_aacdec_sharedlibrary.so \\
-#    vendor/motorola/__DEVICE__/proprietary/libomx_amrdec_sharedlibrary.so:/system/lib/libomx_amrdec_sharedlibrary.so \\
-#    vendor/motorola/__DEVICE__/proprietary/libomx_amrenc_sharedlibrary.so:/system/lib/libomx_amrenc_sharedlibrary.so \\
-#    vendor/motorola/__DEVICE__/proprietary/libomx_arcomxcore_sharedlibrary.so:/system/lib/libomx_arcomxcore_sharedlibrary.so \\
-#    vendor/motorola/__DEVICE__/proprietary/libomx_avcdec_sharedlibrary.so:/system/lib/libomx_avcdec_sharedlibrary.so \\
-#    vendor/motorola/__DEVICE__/proprietary/libomx_m4vdec_sharedlibrary.so:/system/lib/libomx_m4vdec_sharedlibrary.so \\
-#    vendor/motorola/__DEVICE__/proprietary/libomx_mp3dec_sharedlibrary.so:/system/lib/libomx_mp3dec_sharedlibrary.so \\
+    vendor/motorola/__DEVICE__/proprietary/libOmxMp3Dec.so:/system/lib/libOmxMp3Dec.so \\
+    vendor/motorola/__DEVICE__/proprietary/libomx_aacdec_sharedlibrary.so:/system/lib/libomx_aacdec_sharedlibrary.so \\
+    vendor/motorola/__DEVICE__/proprietary/libomx_amrdec_sharedlibrary.so:/system/lib/libomx_amrdec_sharedlibrary.so \\
+    vendor/motorola/__DEVICE__/proprietary/libomx_amrenc_sharedlibrary.so:/system/lib/libomx_amrenc_sharedlibrary.so \\
+    vendor/motorola/__DEVICE__/proprietary/libomx_arcomxcore_sharedlibrary.so:/system/lib/libomx_arcomxcore_sharedlibrary.so \\
+    vendor/motorola/__DEVICE__/proprietary/libomx_avcdec_sharedlibrary.so:/system/lib/libomx_avcdec_sharedlibrary.so \\
+    vendor/motorola/__DEVICE__/proprietary/libomx_m4vdec_sharedlibrary.so:/system/lib/libomx_m4vdec_sharedlibrary.so \\
+    vendor/motorola/__DEVICE__/proprietary/libomx_mp3dec_sharedlibrary.so:/system/lib/libomx_mp3dec_sharedlibrary.so \\
 #    vendor/motorola/__DEVICE__/proprietary/fmradioserver:/system/bin/fmradioserver \\
 #    vendor/motorola/__DEVICE__/proprietary/fmradio:/system/bin/fmradio \\
 #    vendor/motorola/__DEVICE__/proprietary/libFMRadio.so:/system/lib/libFMRadio.so \\
