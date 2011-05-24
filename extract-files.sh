@@ -278,22 +278,22 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/nvram.txt:/system/etc/wifi/nvram.txt \\
     vendor/motorola/__DEVICE__/proprietary/sdio-g-cdc-reclaim-wme.bin:/system/etc/wifi/sdio-g-cdc-reclaim-wme.bin \\
     vendor/motorola/__DEVICE__/proprietary/pvplayer_mot.cfg:/system/etc/pvplayer_mot.cfg \\
-   vendor/motorola/__DEVICE__/proprietary/adp5588_morrison.kcm.bin:/system/usr/keychars/adp5588_morrison.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/headset.kcm.bin:/system/usr/keychars/headset.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_P2.kcm.bin:/system/usr/keychars/adp5588_morrison_P2.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/morrison-kpd.kcm.bin:/system/usr/keychars/morrison-kpd.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_keypad.kcm.bin:/system/usr/keychars/adp5588_keypad.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_azerty.kcm.bin:/system/usr/keychars/adp5588_morrison_azerty.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_keypad.kl:/system/usr/keylayout/adp5588_keypad.kl \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison.kl:/system/usr/keylayout/adp5588_morrison.kl \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_P2.kl:/system/usr/keylayout/adp5588_morrison_P2.kl \\
-    vendor/motorola/__DEVICE__/proprietary/headset.kl:/system/usr/keylayout/headset.kl \\
-    vendor/motorola/__DEVICE__/proprietary/morrison-kpd.kl:/system/usr/keylayout/morrison-kpd.kl \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_azerty.kl:/system/usr/keylayout/adp5588_morrison_azerty.kl \\
-    vendor/motorola/__DEVICE__/proprietary/AVRCP.kl:/system/usr/keylayout/AVRCP.kl \\
-    vendor/motorola/__DEVICE__/proprietary/qwerty.kl:/system/usr/keylayout/qwerty.kl \\
+    #vendor/motorola/__DEVICE__/proprietary/adp5588_morrison.kcm.bin:/system/usr/keychars/adp5588_morrison.kcm.bin \\
+    #vendor/motorola/__DEVICE__/proprietary/headset.kcm.bin:/system/usr/keychars/headset.kcm.bin \\
+    #vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_P2.kcm.bin:/system/usr/keychars/adp5588_morrison_P2.kcm.bin \\
+    #vendor/motorola/__DEVICE__/proprietary/morrison-kpd.kcm.bin:/system/usr/keychars/morrison-kpd.kcm.bin \\
+    #vendor/motorola/__DEVICE__/proprietary/adp5588_keypad.kcm.bin:/system/usr/keychars/adp5588_keypad.kcm.bin \\
+    #vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_azerty.kcm.bin:/system/usr/keychars/adp5588_morrison_azerty.kcm.bin \\
+    #vendor/motorola/__DEVICE__/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \\
+    #vendor/motorola/__DEVICE__/proprietary/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \\
+    #vendor/motorola/__DEVICE__/proprietary/adp5588_keypad.kl:/system/usr/keylayout/adp5588_keypad.kl \\
+    #vendor/motorola/__DEVICE__/proprietary/adp5588_morrison.kl:/system/usr/keylayout/adp5588_morrison.kl \\
+    #vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_P2.kl:/system/usr/keylayout/adp5588_morrison_P2.kl \\
+    #vendor/motorola/__DEVICE__/proprietary/headset.kl:/system/usr/keylayout/headset.kl \\
+    #vendor/motorola/__DEVICE__/proprietary/morrison-kpd.kl:/system/usr/keylayout/morrison-kpd.kl \\
+    #vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_azerty.kl:/system/usr/keylayout/adp5588_morrison_azerty.kl \\
+    #vendor/motorola/__DEVICE__/proprietary/AVRCP.kl:/system/usr/keylayout/AVRCP.kl \\
+    #vendor/motorola/__DEVICE__/proprietary/qwerty.kl:/system/usr/keylayout/qwerty.kl \\
     vendor/motorola/__DEVICE__/proprietary/touchpad:/system/bin/touchpad \\
     vendor/motorola/__DEVICE__/proprietary/tcmd_engine:/system/bin/tcmd_engine \\
     vendor/motorola/__DEVICE__/proprietary/fuel_gauge:/system/bin/fuel_gauge \\

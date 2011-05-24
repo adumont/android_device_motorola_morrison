@@ -104,6 +104,25 @@ PRODUCT_COPY_FILES += \
     device/motorola/morrison/touchpad.cfg:system/etc/touchpad/54/touchpad.cfg \
     device/motorola/morrison/touchpad.enc:system/etc/touchpad/54/touchpad.enc
 
+PRODUCT_COPY_FILES += \
+    device/motorola/morrison/adp5588_morrison.kcm.bin:/system/usr/keychars/adp5588_morrison.kcm.bin \
+    device/motorola/morrison/headset.kcm.bin:/system/usr/keychars/headset.kcm.bin \
+    device/motorola/morrison/adp5588_morrison.kl:/system/usr/keylayout/adp5588_morrison.kl \
+    device/motorola/morrison/headset.kl:/system/usr/keylayout/headset.kl
+
+    #device/motorola/morrison/adp5588_morrison_P2.kcm.bin:/system/usr/keychars/adp5588_morrison_P2.kcm.bin \
+    #device/motorola/morrison/morrison-kpd.kcm.bin:/system/usr/keychars/morrison-kpd.kcm.bin \
+    #device/motorola/morrison/adp5588_keypad.kcm.bin:/system/usr/keychars/adp5588_keypad.kcm.bin \
+    #device/motorola/morrison/adp5588_morrison_azerty.kcm.bin:/system/usr/keychars/adp5588_morrison_azerty.kcm.bin \
+    #device/motorola/morrison/qwerty.kcm.bin:/system/usr/keychars/qwerty.kcm.bin \
+    #device/motorola/morrison/adp5588_keypad.kl:/system/usr/keylayout/adp5588_keypad.kl \
+    #device/motorola/morrison/adp5588_morrison_P2.kl:/system/usr/keylayout/adp5588_morrison_P2.kl \
+    #device/motorola/morrison/morrison-kpd.kl:/system/usr/keylayout/morrison-kpd.kl \
+    #device/motorola/morrison/adp5588_morrison_azerty.kl:/system/usr/keylayout/adp5588_morrison_azerty.kl \
+    #device/motorola/morrison/AVRCP.kl:/system/usr/keylayout/AVRCP.kl \
+    #device/motorola/morrison/qwerty.kl:/system/usr/keylayout/qwerty.kl
+
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/motorola/morrison/kernel
 else
