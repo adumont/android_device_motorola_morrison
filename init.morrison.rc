@@ -121,15 +121,15 @@ on init
     
 
 # Modemlog
-service modemlog /system/bin/modemlog
-    class TOOL
-    user system
-    oneshot
+#service modemlog /system/bin/modemlog
+#    class TOOL
+#    user system
+#    oneshot
 
 # MMClog
-service mmclog /system/bin/mmclog
-    class TOOL
-    oneshot
+#service mmclog /system/bin/mmclog
+#    class TOOL
+#    oneshot
 
 # Touchpad driver
 service touchpad /system/bin/touchpad -a /data/touchpad.log
