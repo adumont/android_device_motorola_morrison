@@ -141,26 +141,37 @@ service touchpad /system/bin/touchpad -a /data/touchpad.log
 # service fmradio /system/bin/fmradioserver
 #     class BT
 
-#service dhcpcd /system/bin/dhcpcd -B eth0
-service dhcpcd /system/bin/dhcpcd -ABKL -d eth0
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL -d eth0
     class WLAN
-#	user system - this makes socket() calls fail with permission denied
-	group dhcp
+    #user system #- this makes socket() calls fail with permission denied
+    group dhcp
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+    group dhcp
+    disabled
+    oneshot
+
+service autoip /system/bin/dhcpcd -B -d eth0
+    class WLAN
+    #user system  #- this makes socket() calls fail with permission denied
+    group dhcp
     disabled
     oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant -D wext -i eth0 -c /data/misc/wifi/wpa_supplicant.conf
     class WLAN
-#	user system - this makes socket() calls fail with permission denied
-#	socket wpa_eth0 dgram 0660 wifi wifi
-	group wifi
+    #user system - this makes socket() calls fail with permission denied
+    socket wpa_eth0 dgram 0660 wifi wifi
+    group wifi
     disabled
     oneshot
     
 # E-compass  daemon
 service akmd2 /system/bin/akmd2 -f /system/etc/akm/akmd_set.cfg
-	user system
-	group input
+    user system
+    group input
     class HW
     oneshot
 
