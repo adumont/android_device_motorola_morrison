@@ -279,6 +279,7 @@ QualcommCameraHardware::QualcommCameraHardware()
         LOGE("Camera open thread creation failed");
     }
     memset(&mDimension, 0, sizeof(mDimension));
+    memset(&mCrop, 0, sizeof(mCrop));
     mAFenabled = false;
     LOGV("constructor X");
 }
@@ -1455,7 +1456,7 @@ void QualcommCameraHardware::stopPreviewInternal()
             cancelAutoFocus();
         }
 
-	mAFenabled = false;
+        mAFenabled = false;
 
         LOGV("Stopping preview");
         mCameraRunning = !native_stop_preview(mCameraControlFd);
@@ -1500,10 +1501,10 @@ void QualcommCameraHardware::runAutoFocus()
 
     // Autofocusing when preview isn't showing breaks it
     if(mAFenabled) {
-	/* This will block until either AF completes or is cancelled. */
+        /* This will block until either AF completes or is cancelled. */
         native_set_afmode(camerafd, AF_MODE_MACRO);
         if (native_get_af_result(camerafd) == 0) {
-	    status = true;
+            status = true;
         }
     }
 
@@ -2428,6 +2429,5 @@ status_t QualcommCameraHardware::sendCommand(int32_t command, int32_t arg1,
 }
 
 }; // namespace android
-
 
 
