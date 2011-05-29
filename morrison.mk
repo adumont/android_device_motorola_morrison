@@ -105,10 +105,10 @@ PRODUCT_COPY_FILES += \
     device/motorola/morrison/touchpad.enc:system/etc/touchpad/54/touchpad.enc
 
 PRODUCT_COPY_FILES += \
-    device/motorola/morrison/adp5588_morrison.kcm.bin:/system/usr/keychars/adp5588_morrison.kcm.bin \
-    device/motorola/morrison/headset.kcm.bin:/system/usr/keychars/headset.kcm.bin \
-    device/motorola/morrison/adp5588_morrison.kl:/system/usr/keylayout/adp5588_morrison.kl \
-    device/motorola/morrison/headset.kl:/system/usr/keylayout/headset.kl
+    device/motorola/morrison/keychars/adp5588_morrison.kcm.bin:/system/usr/keychars/adp5588_morrison.kcm.bin \
+    device/motorola/morrison/keychars/headset.kcm.bin:/system/usr/keychars/headset.kcm.bin \
+    device/motorola/morrison/keylayout/adp5588_morrison.kl:/system/usr/keylayout/adp5588_morrison.kl \
+    device/motorola/morrison/keylayout/headset.kl:/system/usr/keylayout/headset.kl
 
     #device/motorola/morrison/adp5588_morrison_P2.kcm.bin:/system/usr/keychars/adp5588_morrison_P2.kcm.bin \
     #device/motorola/morrison/morrison-kpd.kcm.bin:/system/usr/keychars/morrison-kpd.kcm.bin \
