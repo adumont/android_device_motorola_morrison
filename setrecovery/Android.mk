@@ -1,4 +1,4 @@
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),zeppelin)
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),morrison)
 
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
