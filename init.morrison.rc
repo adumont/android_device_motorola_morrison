@@ -17,34 +17,6 @@ on init
     chmod 0666 /proc/bt_power
     mkdir /data/radio 0770 radio radio
     mkdir /data/radio 0777 system system
-    chmod 0777 /dev/oncrpc
-    chmod 0777 /dev/oncrpc/00000000:0
-    chmod 0777 /dev/oncrpc/30000000:959ac044
-    chmod 0777 /dev/oncrpc/30000002:00020000
-    chmod 0777 /dev/oncrpc/30000003:a7eed910
-    chmod 0777 /dev/oncrpc/3000000a:00010000
-    chmod 0777 /dev/oncrpc/3000000e:d0b61921
-    chmod 0777 /dev/oncrpc/3000000f:1c5a0000
-    chmod 0777 /dev/oncrpc/30000013:00020000
-    chmod 0777 /dev/oncrpc/30000014:00010000
-    chmod 0777 /dev/oncrpc/30000016:8ca03b11
-    chmod 0777 /dev/oncrpc/30000019:821a1945
-    chmod 0777 /dev/oncrpc/3000001a:00010000
-    chmod 0777 /dev/oncrpc/3000001b:d6b8aee8
-    chmod 0777 /dev/oncrpc/3000001d:ba845703
-    chmod 0777 /dev/oncrpc/3000003c:d0fd1992
-    chmod 0777 /dev/oncrpc/30000048:00020000
-    chmod 0777 /dev/oncrpc/3000005b:e63bc050
-    chmod 0777 /dev/oncrpc/3000005f:d9769667
-    chmod 0777 /dev/oncrpc/30000061:00010000
-    chmod 0777 /dev/oncrpc/30000064:00010000
-    chmod 0777 /dev/oncrpc/3000006b:00010000
-    chmod 0777 /dev/oncrpc/30000081:00010000
-    chmod 0777 /dev/oncrpc/3000008c:00010000
-    chmod 0777 /dev/oncrpc/30000101:00010000
-    chmod 0777 /dev/oncrpc/30000200:00000000
-    chmod 0777 /dev/oncrpc/30000802:00010000
-    chmod 0777 /dev/oncrpc/30001120:00010000
 
 # Vibrator
     chown system system /sys/class/vibrator/vibrator/enable
@@ -64,43 +36,13 @@ on init
     mkdir /data/local/12m/batch 0771 system system
     mkdir /data/local/12m/batch/log 0771 system system
  
-#  E-compass  
-    chown system system /dev/akm8973_aot
-    chown system system /dev/akm8973_dev
-
 # Accelerometer
     chown system system /sys/class/i2c-adapter/i2c-0/0-0018/mode
     chmod 0664 /sys/class/i2c-adapter/i2c-0/0-0018/mode
-    chown system system /dev/accelerometer
-    chmod 0664 /dev/accelerometer
-    chown system system /dev/lis331dlh
-    chmod 0664 /dev/lis331dlh
 
 # hw accel
     symlink /dev/msm_hw3dc /dev/hw3dc
     symlink /dev/msm_hw3dm /dev/hw3dm
-    chown system graphics /dev/hw3dc
-    chown system graphics /dev/hw3dm
-    chmod 666 /dev/msm_hw3dc
-    chmod 660 /dev/msm_hw3dm
-
-# proximity
-    chown system system /dev/proximity
-    chmod 0664 /dev/proximity
-
-# Permissions changes needed for TCMD
-    chown system system /dev/blan_enable
-    chmod 0660 /dev/blan_enable
-    chown system system /dev/misc_helper
-    chmod 0660 /dev/misc_helper
-    chown system graphics /dev/graphics/fb0
-# Google Skymap wants to copybit fb0 but requests no special privileges
-    chmod 0666 /dev/graphics/fb0
-    chmod 0644 /dev/block/mmcblk0p1
-
-# Permissions needed for port_bridge
-    chown root system /dev/ttyHSUSB0
-    chmod 0660 /dev/ttyHSUSB0
 
 # Clearing FM/BT reference count temp file  contents
     write /data/bluedroid_ref 123456
@@ -110,10 +52,6 @@ on init
     #setprop wifi.interface /data/misc/wifi/sockets/eth0
     setprop wifi.interface eth0
     #setprop wifi.dhcpinterface eth0
-
-# Set up touchpad
-    chown system system /dev/touchpad
-    chmod 0664 /dev/touchpad
 
 # Set RIL
     setprop rild.libpath /system/lib/libril-qc-1.so

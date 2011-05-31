@@ -25,7 +25,8 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/motorola/morrison/init.morrison.rc:root/init.morrison.rc \
+    device/motorola/morrison/ueventd.morrison.rc:root/ueventd.morrison.rc \
+    device/motorola/morrison/init.morrison.rc:root/init.morrison.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/morrison/morrison-vendor.mk)
