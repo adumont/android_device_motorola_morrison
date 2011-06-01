@@ -7,12 +7,11 @@ on init
     # Reboot to recovery
     chown system system /dev/mtd/mtd3
     mkdir /data/misc/wifi 0777 wifi wifi
+    exec rmdir /data/misc/wifi/sockets
     mkdir /data/misc/wifi/sockets 0777 wifi wifi
     mkdir /data/system 0771 system system
     mkdir /data/system/wpa_supplicant 0771 wifi wifi
     mkdir /data/media system 0775 system
-    chmod 0777 /data/misc/wifi
-    exec rmdir /data/misc/wifi/sockets
     exec rm /data/misc/dhcp/dhcpcd-eth0.lease
     exec rm /data/misc/dhcp/dhcpcd-eth0.pid
     chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
@@ -21,7 +20,6 @@ on init
     #    chmod 0660 /sys/module/board_morrison/parameters/bluetooth_power_on
     exec chown bluetooth bluetooth /proc/bt_power
     chmod 0666 /proc/bt_power
-    mkdir /data/radio 0770 radio radio
     mkdir /data/radio 0777 system system
 
 # Speed up SDCard
@@ -55,6 +53,8 @@ on init
     write /data/bluedroid_ref 123456
     chmod 0777 /data/bluedroid_ref
 
+# Backwards compatibility?
+    symlink /dev/ttyHS0 /dev/ttyMSM0
 
 # Touchpad driver
 service touchpad /system/bin/touchpad -a /data/touchpad.log
@@ -119,6 +119,15 @@ service hciattach /system/bin/hciattach -s 3000000 /dev/ttyMSM0 any 3000000 flow
     group bluetooth net_bt_admin misc
     disabled
     oneshot
+
+service hcid /system/bin/hcid -s -n -f /etc/bluez/hcid.conf
+    class BT
+    socket bluetooth stream 660 bluetooth bluetooth
+    socket dbus_bluetooth stream 660 bluetooth bluetooth
+    # init.rc does not yet support applying capabilities, so run as root and
+    # let hcid drop uid to bluetooth with the right linux capabilities
+    group bluetooth net_bt_admin misc
+    disabled
 
 service fuel_gauge /system/bin/fuel_gauge --all
     class TCMD
