@@ -168,8 +168,6 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/nvram.txt:/system/etc/wifi/nvram.txt \\
     vendor/motorola/__DEVICE__/proprietary/sdio-g-cdc-reclaim-wme.bin:/system/etc/wifi/sdio-g-cdc-reclaim-wme.bin \\
     vendor/motorola/__DEVICE__/proprietary/pvplayer_mot.cfg:/system/etc/pvplayer_mot.cfg \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_azerty.kcm.bin:/system/usr/keychars/adp5588_morrison_azerty.kcm.bin \\
-    vendor/motorola/__DEVICE__/proprietary/adp5588_morrison_azerty.kl:/system/usr/keylayout/adp5588_morrison_azerty.kl \\
     vendor/motorola/__DEVICE__/proprietary/touchpad:/system/bin/touchpad \\
     vendor/motorola/__DEVICE__/proprietary/tcmd_engine:/system/bin/tcmd_engine \\
     vendor/motorola/__DEVICE__/proprietary/fuel_gauge:/system/bin/fuel_gauge \\
