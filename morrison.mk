@@ -110,8 +110,8 @@ PRODUCT_COPY_FILES += \
     device/motorola/morrison/keychars/headset.kcm.bin:/system/usr/keychars/headset.kcm.bin \
     device/motorola/morrison/keychars/morrison-kpd.kcm.bin:/system/usr/keychars/morrison-kpd.kcm.bin \
     device/motorola/morrison/keylayout/adp5588_morrison.kl:/system/usr/keylayout/adp5588_morrison.kl \
-    device/motorola/morrison/keylayout/headset.kl:/system/usr/keylayout/headset.kl
-    device/motorola/morrison/keylayout/morrison-kpd.kl:/system/usr/keylayout/morrison-kpd.kl \
+    device/motorola/morrison/keylayout/headset.kl:/system/usr/keylayout/headset.kl \
+    device/motorola/morrison/keylayout/morrison-kpd.kl:/system/usr/keylayout/morrison-kpd.kl
 
     #device/motorola/morrison/adp5588_morrison_P2.kcm.bin:/system/usr/keychars/adp5588_morrison_P2.kcm.bin \
     #device/motorola/morrison/adp5588_keypad.kcm.bin:/system/usr/keychars/adp5588_keypad.kcm.bin \
