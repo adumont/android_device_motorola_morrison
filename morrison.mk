@@ -86,7 +86,7 @@ PRODUCT_PACKAGES += \
     dexpreopt \
     setrecovery
 
-DISABLE_DEXPREOPT := false
+DISABLE_DEXPREOPT := true
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
