@@ -59,6 +59,7 @@ adb pull /system/lib/libOmxH264Dec.so ../../../vendor/motorola/$DEVICE/proprieta
 adb pull /system/lib/libOmxMp3Dec.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libOmxMpeg4Dec.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libOmxVidEnc.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/libvideotrimer.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libmm-adspsvc.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libomx_wmvdec_sharedlibrary.so ../../../vendor/motorola/$DEVICE/proprietary
 
@@ -72,16 +73,16 @@ adb pull /system/etc/01_pvplayer_mot.cfg ../../../vendor/motorola/$DEVICE/propri
 adb pull /system/etc/wifi/nvram.txt ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/wifi/sdio-g-cdc-reclaim-wme.bin ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/pvplayer_mot.cfg ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/usr/keychars/adp5588_morrison_P2.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+#adb pull /system/usr/keychars/adp5588_morrison_P2.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/usr/keychars/morrison-kpd.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
-adb pull /system/usr/keychars/adp5588_keypad.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
-adb pull /system/usr/keychars/adp5588_morrison_azerty.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+#adb pull /system/usr/keychars/adp5588_keypad.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
+#adb pull /system/usr/keychars/adp5588_morrison_azerty.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/usr/keychars/qwerty.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/usr/keychars/qwerty2.kcm.bin ../../../vendor/motorola/$DEVICE/proprietary/
-adb pull /system/usr/keylayout/adp5588_keypad.kl ../../../vendor/motorola/$DEVICE/proprietary/
-adb pull /system/usr/keylayout/adp5588_morrison_P2.kl ../../../vendor/motorola/$DEVICE/proprietary/
+#adb pull /system/usr/keylayout/adp5588_keypad.kl ../../../vendor/motorola/$DEVICE/proprietary/
+#adb pull /system/usr/keylayout/adp5588_morrison_P2.kl ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/usr/keylayout/morrison-kpd.kl ../../../vendor/motorola/$DEVICE/proprietary/
-adb pull /system/usr/keylayout/adp5588_morrison_azerty.kl ../../../vendor/motorola/$DEVICE/proprietary/
+#adb pull /system/usr/keylayout/adp5588_morrison_azerty.kl ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/usr/keylayout/AVRCP.kl ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/usr/keylayout/qwerty.kl ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/bin/touchpad ../../../vendor/motorola/$DEVICE/proprietary/
@@ -89,6 +90,7 @@ adb pull /system/bin/tcmd_engine ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/bin/fuel_gauge ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/lib/egl/libGLES_qcom.so ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/etc/akm/akmd_set.cfg ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /sbin/charge_only_mode ../../../vendor/motorola/$DEVICE/proprietary
 
 # BT
 adb pull /system/bin/bt_downloader ../../../vendor/motorola/$DEVICE/proprietary
@@ -185,6 +187,8 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libomx_avcdec_sharedlibrary.so:/system/lib/libomx_avcdec_sharedlibrary.so \\
     vendor/motorola/__DEVICE__/proprietary/libomx_m4vdec_sharedlibrary.so:/system/lib/libomx_m4vdec_sharedlibrary.so \\
     vendor/motorola/__DEVICE__/proprietary/libomx_mp3dec_sharedlibrary.so:/system/lib/libomx_mp3dec_sharedlibrary.so \\
+    vendor/motorola/morrison/proprietary/libvideotrimer.so:/system/lib/libvideotrimer.so \\
+vendor/motorola/morrison/proprietary/charge_only_mode:root/sbin/charge_only_mode
 
 
 
