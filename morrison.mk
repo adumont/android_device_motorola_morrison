@@ -79,7 +79,6 @@ PRODUCT_PACKAGES += \
     gps.msm7k \
     sensors.morrison \
     lights.morrison \
-    Torch \
     libcamera \
     libaudio \
     rzscontrol \
