@@ -35,9 +35,10 @@ dalvik.vm.heapsize=32m
 # Increase SKIA decode memory capability for progressive jpg file
 ro.media.dec.jpeg.memcap=20000000
 
-# Persist default parameters
-persist.sys.use_dithering=0
+# Tweaks
+persist.sys.use_dithering=1
 persist.sys.purgeable_assets=1
+ro.compcache.default=0
 
 # Enable mute switch handling
 ro.config.ringerswitch = 1
