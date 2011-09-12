@@ -83,7 +83,15 @@ PRODUCT_PACKAGES += \
     libaudio \
     rzscontrol \
     dexpreopt \
+    OpenWnn\
+    PinyinIME\
+    libWnnEngDic\
+    libWnnJpnDic\
+    libwnndict\
     setrecovery
+
+# Chinese stuff
+PRODUCT_PACKAGES += OpenWnn PinyinIME libWnnEngDic libWnnJpnDic libwnndict
 
 DISABLE_DEXPREOPT := true
 
