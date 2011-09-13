@@ -42,3 +42,6 @@ ro.compcache.default=0
 
 # Enable mute switch handling
 ro.config.ringerswitch = 1
+
+# Data enabled at first boot
+ro.data.on=1
