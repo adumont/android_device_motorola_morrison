@@ -42,6 +42,7 @@ TARGET_OTA_ASSERT_DEVICE := morr,morrison
 # Kernel
 TARGET_PREBUILT_KERNEL := device/motorola/morrison/kernel
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null quiet
+BOARD_KERNEL_BASE := 0x10000000
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/motorola/morrison/UsbController.cpp
 
