@@ -26,7 +26,10 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 PRODUCT_COPY_FILES += \
     device/motorola/morrison/ueventd.morrison.rc:root/ueventd.morrison.rc \
-    device/motorola/morrison/init.morrison.rc:root/init.morrison.rc
+    device/motorola/morrison/init.morrison.rc:root/init.morrison.rc \
+    device/motorola/morrison/initlogo.rle:root/initlogo.rle \
+    device/motorola/morrison/logo.rle:root/logo.rle
+
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/morrison/morrison-vendor.mk)
