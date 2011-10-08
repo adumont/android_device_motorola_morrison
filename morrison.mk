@@ -145,9 +145,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    device/motorola/morrison/dhd.ko:system/lib/dhd.ko
 
-$(call inherit-product-if-exists, vendor/motorola/morrison/morrison-vendor.mk)
+PRODUCT_COPY_FILES += $(shell \
+    find device/motorola/morrison/modules -name '*.ko' \
+    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
+    | tr '\n' ' ')
 
 PRODUCT_COPY_FILES += \
     device/motorola/morrison/media_profiles.xml:/system/etc/media_profiles.xml \
