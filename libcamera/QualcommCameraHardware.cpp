@@ -100,8 +100,6 @@ struct preview_size_type {
 };
 
 static preview_size_type preview_sizes[] = {
-// 	{ 800, 480 }, //WVGA
-// 	{ 640, 480 }, //VGA
     { 480, 320 }, // HVGA
     { 352, 288 }, // CIF
     { 320, 240 }, // QVGA
@@ -258,7 +256,7 @@ static void receive_camframe_callback(struct msm_frame_t *frame);
 
 static int camerafd;
 static int fd_frame;
-//Zoom
+// zoom-related variables
 static int32_t mMaxZoom = -1;
 static bool zoomSupported = false;
 static int32_t prevzoom = 0;
@@ -325,7 +323,7 @@ void QualcommCameraHardware::initDefaultParameters()
     p.setPreviewFormat(CameraParameters::PIXEL_FORMAT_YUV420SP); // informative
     p.setPictureFormat(CameraParameters::PIXEL_FORMAT_JPEG); // informative
 
-    p.set("jpeg-quality", "100"); // maximum quality
+    p.set("jpeg-quality", "90"); // default quality
     p.set("jpeg-thumbnail-width", THUMBNAIL_WIDTH_STR); // informative
     p.set("jpeg-thumbnail-height", THUMBNAIL_HEIGHT_STR); // informative
     p.set("jpeg-thumbnail-quality", "40");
@@ -357,7 +355,7 @@ void QualcommCameraHardware::initDefaultParameters()
     p.set(CameraParameters::KEY_SUPPORTED_FLASH_MODES, flashmode_values);
     p.set(CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto");
 
-    // Zoom parameters
+    // zoom parameters
     p.set(CameraParameters::KEY_ZOOM_SUPPORTED, "true");
     p.set(CameraParameters::KEY_ZOOM, "0");
     p.set(CameraParameters::KEY_MAX_ZOOM, 11);
@@ -994,12 +992,12 @@ static void setLatLon(exif_tag_id_t tag, const char *latlonString) {
 void QualcommCameraHardware::setGpsParameters() {
     const char *str = NULL;
 
-    //Set Latitude
+    // Set latitude
     str = mParameters.get(CameraParameters::KEY_GPS_LATITUDE);
     LOGV("Latitude: %s", str);
     if(str != NULL) {
         setLatLon(EXIFTAGID_GPS_LATITUDE, str);
-        //set Latitude Ref
+        // Set latitude ref
         str = NULL;
         str = mParameters.get(CameraParameters::KEY_GPS_LATITUDE_REF);
         if(str != NULL) {
@@ -1011,12 +1009,12 @@ void QualcommCameraHardware::setGpsParameters() {
     } else
         return;
 
-    //set Longitude
+    // Set longitude
     str = NULL;
     str = mParameters.get(CameraParameters::KEY_GPS_LONGITUDE);
     if(str != NULL) {
         setLatLon(EXIFTAGID_GPS_LONGITUDE, str);
-        //set Longitude Ref
+        // Set longitude ref
         str = NULL;
         str = mParameters.get(CameraParameters::KEY_GPS_LONGITUDE_REF);
         if(str != NULL) {
@@ -1027,7 +1025,7 @@ void QualcommCameraHardware::setGpsParameters() {
     }
     }
 
-    //set Altitude
+    // Set altitude
     str = NULL;
     str = mParameters.get(CameraParameters::KEY_GPS_ALTITUDE);
     if(str != NULL) {
@@ -1037,7 +1035,7 @@ void QualcommCameraHardware::setGpsParameters() {
         memcpy(&altitude, &alt_value, sizeof(altitude));
         addExifTag(EXIFTAGID_GPS_ALTITUDE, EXIF_RATIONAL, 1,
                     1, (void *)&altitude);
-        //set AltitudeRef
+        // Set altitude ref
         int ref = mParameters.getInt(CameraParameters::KEY_GPS_ALTITUDE_REF);
         if( !(ref < 0 || ref > 1) )
             addExifTag(EXIFTAGID_GPS_ALTITUDE_REF, EXIF_BYTE, 1,
@@ -1053,7 +1051,7 @@ void QualcommCameraHardware::runJpegEncodeThread(void *data)
 {
     unsigned char *buffer ;
 
-    //Reset the Gps Information
+    // Reset the GPS information
     exif_table_numEntries = 0;
     LOGV("runJpegEncodeThread E");
 
@@ -1196,7 +1194,7 @@ bool QualcommCameraHardware::initPreview()
                 LOGV("set preview callback");
                 mFrameThreadRunning = !pthread_create(&mFrameThread,
                                                       NULL,
-                                                      cam_frame_click, //frame_thread,
+                                                      cam_frame_click, // frame_thread,
                                                       &frames[cnt]);
                 if (mFrameThreadRunning)
                     LOGV("Preview thread created");
@@ -1323,7 +1321,7 @@ bool QualcommCameraHardware::initRaw(bool initJpegHeap)
     LOGV("do_mmap snapshot pbuf = %p, pmem_fd = %d",
          (uint8_t *)mRawHeap->mHeap->base(), mRawHeap->mHeap->getHeapID());
 
-    // Jpeg
+    // JPEG
     if (initJpegHeap) {
         LOGV("initRaw: initializing mJpegHeap.");
         mJpegHeap =
@@ -1762,7 +1760,7 @@ status_t QualcommCameraHardware::setParameters(
         else mDimension.ui_thumbnail_height = val;
     }
 
-    //User changed pic size, recheck zoom
+    // User changed pic size, recheck zoom
     if (params.get("picture-size") != NULL && mParameters.get("picture-size") != NULL && strcmp(params.get("picture-size"), mParameters.get("picture-size")) != 0){
         prevzoom = 99;
         LOGV("setParameters: user/system modified pic size! rechecking zoom");
@@ -2088,10 +2086,10 @@ void QualcommCameraHardware::setZoom()
     if(native_get_maxzoom(mCameraControlFd,
             (void *)&mMaxZoom) == true){
         LOGD("Maximum zoom value is %d", mMaxZoom);
-        //maxZoom/5 in the ideal world, but it's stuck on 90
+        // maxZoom/5 in the ideal world, but it's stuck on 90
         multiplier = getParm("picture-size", picturesize);
 
-        //Camcorder mode uses preview size
+        // Camcorder mode uses preview size
         if (strcmp(mParameters.get("preview-frame-rate"),"15") != 0){
             multiplier = getParm("preview-size", picturesize);
             iscamcorder = true;
@@ -2099,11 +2097,11 @@ void QualcommCameraHardware::setZoom()
 
         zoomSupported = true;
         if(mMaxZoom > 0){
-            //To get more 'natural' zoom we reduce picture resolution
-            //if the sensor can't cope with it
+            // To get more 'natural' zoom we reduce picture resolution
+            // if the sensor can't cope with it
             zoomsel = mParameters.getInt(CameraParameters::KEY_ZOOM);
             if(!iscamcorder && prevzoom > zoomsel){
-                //Reducing zoom => increasing quality
+                // Reducing zoom => increasing quality
                 mParameters.set("picture-size", "2560x1920");
                 LOGV("User panning, increasing picture quality to max");
             }
@@ -2116,6 +2114,8 @@ void QualcommCameraHardware::setZoom()
                 LOGV("Reducing picture quality; new multiplier: %d", multiplier);
             }
             level = zoomsel * (iscamcorder ? (multiplier*5)/11 : 5);
+            // Update the parameters so initRaw doesn't use the wrong size later
+            mParameters.getPictureSize(&mRawWidth, &mRawHeight);
         }
     } else {
         zoomSupported = false;
@@ -2134,7 +2134,7 @@ void QualcommCameraHardware::setZoom()
         return;
     }
 
-   if (level != -1) {
+    if (level != -1) {
             LOGV("Final Zoom Level: %d", level);
             if (level >= 0 && level <= mMaxZoom) {
                 native_set_parm(CAMERA_SET_PARM_ZOOM, sizeof(level), (void *)&level);
