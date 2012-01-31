@@ -40,5 +40,8 @@ persist.sys.use_dithering=1
 persist.sys.purgeable_assets=1
 ro.compcache.default=0
 
+# Disable ICS rotation animation, it's too slow
+persist.sys.rotationanimation=false
+
 # Enable mute switch handling
 ro.config.ringerswitch = 1
